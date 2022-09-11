@@ -17,3 +17,19 @@ export const LeftSection = styled.div`
     margin: 0 auto;
   }
 `;
+
+export const Video = styled.video`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+`;
+
+export const Container = styled.div`
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

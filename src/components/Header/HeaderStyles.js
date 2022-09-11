@@ -1,38 +1,71 @@
 import { IoIosArrowDropdown } from 'react-icons/io';
 import styled from 'styled-components';
+import ListItem from '@mui/material/ListItem';
+import MenuIcon from '@mui/icons-material/Menu';
+
+
 
 export const Container = styled.div`
   display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: .3s ease-in;
+  overflow: hidden;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 2rem;
-  padding: 1rem;
-  padding-top: 2rem;
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(2, 60px);
-    grid-column-gap: 0.5rem;
-    grid-row-gap: 0.5rem;
+  padding: 0 10vw;
+  width: 100%;
+  @media ${(props) => props.theme.breakpoints.lg} {
+    padding: 0 3vw;
   }
 `;
+
+export const StyledMenuIcon = styled(MenuIcon)`
+  color: white;
+  transform: scale(2);
+`;
+
 export const Div1 = styled.div`
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
   flex-direction: row;
   align-content: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 1 / 1 / 2 / 4;
+  padding: 0.5rem 0;
+  @media ${(props) => props.theme.breakpoints.md} {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  @media screen and (max-width: 480px) {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  
+`;
+
+export const LogoText = styled.div`
+  display: none;
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 3.5vw;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
+
+export const StyledListItem = styled(ListItem)`
+  padding: 2rem 0;
+`;
+
 export const Div2 = styled.div`
   grid-area: 1 / 2 / 2 / 7;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 2 / 1 / 3 / 8;
+  @media ${(props) => props.theme.breakpoints.md} {
+    display: none;
   }
 `;
 export const Div3 = styled.div`
@@ -40,25 +73,50 @@ export const Div3 = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    align-items: center;
-    grid-area: 1 / 4 / 2 / 6;
+  @media ${(props) => props.theme.breakpoints.md} {
+    display: none;
   }
+`;
+
+export const ImageCont = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+`;
+
+export const Flags = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding-top: 3rem;
 `;
 
 export const Div4 = styled.div`
   grid-area: 1 / 8 / 2 / 8;
+  min-width: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media ${(props) => props.theme.breakpoints.md} {
+    display: none;
+  }
+`;
+
+export const MobileButton = styled.div`
+  display: none;
+  @media ${(props) => props.theme.breakpoints.md} {
+    grid-area: 1 / 8 / 2 / 8;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    align-items: center;
-    grid-area: 1 / 6 / 2 / 8;
   }
 `;
 // Navigation Links
 export const NavLink = styled.a`
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2vw, 2rem);
   line-height: 32px;
   color: rgba(255, 255, 255, 0.75);
   transition: 0.4s ease;
@@ -67,9 +125,13 @@ export const NavLink = styled.a`
     opacity: 1;
     cursor: pointer;
   }
-  @media ${(props) => props.theme.breakpoints.sm} {
+  @media ${(props) => props.theme.breakpoints.md} {
     padding: 0.5rem;
   }
+`;
+
+export const Logo = styled.img`
+  width: 60%;
 `;
 
 /// DropDown Contact
@@ -124,10 +186,8 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
 export const SocialIcons = styled.a`
 transition: 0.3s ease;
 color: white;
-border-radius: 50%;
 padding: 7px;
 &:hover {
-    background-color: #212d45;
     transform: scale(1.2);
     cursor: pointer;
     
