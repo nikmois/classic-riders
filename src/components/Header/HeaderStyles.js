@@ -23,6 +23,7 @@ export const Container = styled.div`
   }
 `;
 
+
 export const StyledMenuIcon = styled(MenuIcon)`
   color: white;
   transform: scale(2);
@@ -84,6 +85,10 @@ export const ImageCont = styled.div`
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.4s ease;
+  &:hover{
+    transform: scale(1.5);
+  }
 `;
 
 export const Flags = styled.div`
@@ -123,6 +128,8 @@ export const NavLink = styled.a`
   &:hover {
     color: #fff;
     opacity: 1;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    font-weight: 500;
     cursor: pointer;
   }
   @media ${(props) => props.theme.breakpoints.md} {
@@ -188,8 +195,7 @@ transition: 0.3s ease;
 color: white;
 padding: 7px;
 &:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
     cursor: pointer;
-    
   }
 `

@@ -1,12 +1,22 @@
 import React from 'react';
 
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import Button from '../../styles/GlobalComponents/Button';
-import { LeftSection, Container, Video } from './HeroStyles';
+import { Container, DownSection, TextContainer, UpperSection, Video } from './HeroStyles';
 
 const Hero = () => (
-  <Container> 
-    <Video src="/images/Motonurk.mp4" autoPlay loop muted />
+  <Container id="home"> 
+    <Video src="/images/Motonurk1.mp4" autoPlay loop muted />
+    <TextContainer>
+      <UpperSection>
+      <h1 style={{margin: "0"}}>MOTONURK</h1><br />
+      МОТОМУЗЕЙ КЛУБА CLASSIC RIDERS В НАРВЕ
+      </UpperSection>
+      <DownSection>
+      <h2>ПРИКОСНИСЬ К ИСТОРИИ</h2><br />
+      NARVA, VESTERVALLI 17A
+      </DownSection>
+      
+
+    </TextContainer>
   </Container>
 );
 

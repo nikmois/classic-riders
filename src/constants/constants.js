@@ -1,46 +1,148 @@
-export const projects = [
+
+
+export const NewsCards = [
   {
+    id: 1,
     title: 'MERN Memories',
     description: "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
-      image: '/images/1.png',
-      tags: ['Mongo', 'Express', 'React', 'Node'],
-    source: 'https://google.com',
-    visit: 'https://google.com',
-    id: 0,
+    image: '/images/1.png',
   },
   {
-    title: 'E-Commerce',
-    description:"While building it you're going to learn many advanced React & JavaScript topics, as well as how to use Stripe for card transactions. On top of that, at the end of the video, you will have this unique and complex webshop app that you will be able to add to your portfolio. And trust me, e-commerce applications are impressive.",
-    image: '/images/2.png',
-    tags: ['React', 'JavaScript'],
-    source: 'https://google.com',
-    visit: 'https://google.com',
-    id: 1,
-  },
-  {
-    title: 'WebRTC App',
-    description: "This is a code repository for the corresponding YouTube video. In this tutorial, we're going to build and deploy a React Video Chat Application using WebRTC.",
-      image: '/images/3.jpg',
-      tags: ['React', 'WebRTC'],
-    source: 'https://google.com',
-    visit: 'https://google.com',
     id: 2,
+    title: 'Uudis nr 2',
+    description: "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
+    image: '/images/profile.jpeg',
   },
   {
-    title: 'Unichat',
-    description: "This is a code repository for the corresponding video tutorial. In this video, we will create a full Realtime Chat Application",
-    image: '/images/4.jpg',
-    tags: ['React', 'ChatEngine', 'Firebase'],
-    source: 'https://google.com',
-    visit: 'https://google.com',
     id: 3,
+    title: 'Uudis nr 3',
+    description: "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
+    image: '/images/images.jpeg',
   },
-];
+  {
+    id: 4,
+    title: 'Uudis nr 4',
+    description: "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
+    image: '/images/fun.jpeg',
+  }
+]
 
-export const TimeLineData = [
-  { year: 2017, text: 'Started my journey', },
-  { year: 2018, text: 'Worked as a freelance developer', },
-  { year: 2019, text: 'Founded JavaScript Mastery', },
-  { year: 2020, text: 'Shared my projects with the world', },
-  { year: 2021, text: 'Started my own platform', },
-];
+export const PartnersList = [
+  {
+    title: 'Aleksei Rumjantsev'
+  }, 
+  {
+    title: 'Ljubov Kiritšuk'
+  },
+  {
+    title: 'Anna Vesselko'
+  }, 
+  {
+    title: 'Raigo Võrno'
+  }, 
+  {
+    title: 'Ilja Kalatšjov'
+  }, 
+  {
+    title: 'Katrin Puusepp'
+  }, 
+  {
+    title: 'Alan'
+  }, 
+  {
+    title: 'Alena Ljubushina'
+  }, 
+  {
+    title: 'Gerli Ramler'
+  }, 
+  {
+    title: 'Meelis Püvi'
+  }, 
+  {
+    title: 'Järv Henri'
+  }, 
+  {
+    title: 'Kristina Kyakinen'
+  }, 
+  {
+    title: 'Inna Shibanova'
+  }, 
+  {
+    title: 'Tatjana Sedova'
+  },  
+  {
+    title: 'Maria Beyu'
+  },
+  {
+    title: 'VeloNarva Mtü (Aleksandr Kulikov)'
+  },
+  {
+    title: 'Richard Vallimägi'
+  },
+  {
+    title: 'Aile Kaasik'
+  },
+  {
+    title: 'Nadežda Jaštšenkova'
+  },
+  {
+    title: 'Mihhail Beloussov'
+  },
+  {
+    title: 'Indrek Sirk'
+  },
+  {
+    title: 'Tõnu Piibur'
+  },
+  {
+    title: 'Anton Pratkunas'
+  },
+  {
+    title: 'Jefim Bober'
+  },
+  {
+    title: 'Ivan Kisly'
+  },
+  {
+    title: 'Rait Rattik'
+  },
+  {
+    title: 'Wout Verlinden'
+  },
+  {
+    title: 'Karin Koitla'
+  },
+  {
+    title: 'Rainer Punga'
+  },
+  {
+    title: 'Vladimir Timuška'
+  },
+  {
+    title: 'Ilmar Aun'
+  },
+  {
+    title: 'Jekaterina Bober'
+  },
+  {
+    title: 'Lauri Liibert'
+  },
+  {
+    title: 'Andres Tsengov'
+  },
+  {
+    title: 'Aavo Koppel'
+  },
+  {
+    title: 'Vitali Lopatjuk'
+  },
+  {
+    title: 'Jan Ülle'
+  },
+  {
+    title: 'Ahti Võime'
+  },
+  {
+    title: 'Nikolai Moissejev'
+  },
+]

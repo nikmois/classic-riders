@@ -1,18 +1,23 @@
-import Acomplishments from '../components/Acomplishments/Acomplishments';
-import Projects from '../components/Projects/Projects';
-import Technologies from '../components/Technologies/Technologies';
-import Timeline from '../components/TimeLine/TimeLine';
+import Activities from '../components/Activities/Activities';
+import Hero from '../components/Hero/Hero';
+import Museum from '../components/Museum/Museum';
+import News from '../components/News/News';
+import Partners from '../components/Partners/Partners';
+import Contact from '../components/Contact/Contact';
 import { Layout } from '../layout/Layout';
-import { Section } from '../styles/GlobalComponents';
 
 const Home = () => {
   return (
+    <>
+    <Hero />
     <Layout>
-      <Projects />
-      <Technologies />
-      <Timeline />
-      <Acomplishments />
+      <Museum />
     </Layout>
+      <News />
+      <Activities />
+      <Partners />
+      <Contact/>
+    </>
   );
 };
 

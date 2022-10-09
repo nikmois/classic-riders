@@ -10,9 +10,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import PhoneIcon from '@mui/icons-material/Phone';
+import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 import Image from 'next/image'
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
 import { Container, Div1, Div2, Div3, Div4, NavLink, SocialIcons, Logo, LogoText, MobileButton, StyledListItem, StyledMenuIcon, Flags, ImageCont } from './HeaderStyles';
 
@@ -55,43 +58,60 @@ const Header = () =>  {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
+        
         <StyledListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Link href="/">
-              <ListItemText primary="AVALEHT" />
-            </Link>
-          </ListItemButton>
-        </StyledListItem>
-        <StyledListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <InboxIcon />
+              <AccountBalanceIcon sx={{ fontSize: 20 }}/>
             </ListItemIcon>
             <Link href="#museum">
-              <ListItemText primary="MUUSEUM" />
+              <ListItemText primary="MUUSEUM" primaryTypographyProps={{
+                  fontSize: 20,
+                  fontWeight: 'medium',
+                  letterSpacing: 0,
+                }}/>
             </Link>
           </ListItemButton>
         </StyledListItem>
         <StyledListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <MailIcon />
+              <NewspaperIcon sx={{ fontSize: 20 }}/>
+            </ListItemIcon>
+            <Link href="#news">
+              <ListItemText primaryTypographyProps={{
+                  fontSize: 20,
+                  fontWeight: 'medium',
+                  letterSpacing: 0,
+                }} primary="UUDISED" />
+            </Link>
+          </ListItemButton>
+        </StyledListItem>
+        <StyledListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <TwoWheelerIcon sx={{ fontSize: 20 }}/>
             </ListItemIcon>
             <Link href="#services">
-              <ListItemText primary="TEENUSED" />
+              <ListItemText primaryTypographyProps={{
+                  fontSize: 20,
+                  fontWeight: 'medium',
+                  letterSpacing: 0,
+                }} primary="TEENUSED" />
             </Link>
           </ListItemButton>
         </StyledListItem>
         <StyledListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <MailIcon />
+              <PhoneIcon sx={{ fontSize: 20 }}/>
             </ListItemIcon>
             <Link href="#contacts">
-              <ListItemText primary="KONTAKTID" />
+              <ListItemText primaryTypographyProps={{
+                  fontSize: 20,
+                  fontWeight: 'medium',
+                  letterSpacing: 0,
+                }} primary="KONTAKTID" />
             </Link>
           </ListItemButton>
         </StyledListItem>
@@ -131,22 +151,22 @@ const Header = () =>  {
   
 
   return (
-  <Container style={{backgroundColor: scrolled && "#000000ab"}}>
+  <Container style={{backgroundColor: scrolled && "#000000cf"}}>
     <Div1>
-      <Link href="/">
+      <Link href="#home">
         <Logo style={{cursor: "pointer"}} src="/images/logo.svg" alt="image" />
       </Link>
       <LogoText>CLASSIC <br/>RIDERS</LogoText>
     </Div1>
     <Div2>
       <li>
-      <Link href="/">
-        <NavLink>AVALEHT</NavLink>
+      <Link href="#museum">
+        <NavLink>MUUSEUM</NavLink>
       </Link>
       </li>
       <li>
-      <Link href="#museum">
-        <NavLink>MUUSEUM</NavLink>
+      <Link href="#news">
+        <NavLink>UUDISED</NavLink>
       </Link>
       </li>
       <li>
