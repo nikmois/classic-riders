@@ -2,6 +2,9 @@ import React from 'react';
 import { Container, Header, Carousel, Partner } from './PartnersStyles';
 import { PartnersList } from '../../constants/constants';
 import Slider from "react-slick";
+import { useRouter } from 'next/router';
+import { ru, et, en } from '../../constants/translations';
+import { motion } from 'framer-motion';
 
 const Partners = () => {
   const settings = {
@@ -47,10 +50,29 @@ const Partners = () => {
       }
     ]
   };
+  const animation = {
+    hidden: {
+    y: 100,
+    opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {duration: 0.4}
+    }
+  };
+  const router = useRouter();
+  const { locale } = router;
+  let  t  = locale === "et" ? et : locale === "en" ? en : ru;
   return (
   <Container id="contributors">
-    <Header>
-      MEIE TOETAJAD
+    <Header
+        initial="hidden"
+        whileInView="visible"
+        viewport={{amount: 1, once: true}}
+        variants={animation}
+        as={motion.div}>
+      {t.support}
     </Header>
     <Carousel>
       <Slider {...settings}>

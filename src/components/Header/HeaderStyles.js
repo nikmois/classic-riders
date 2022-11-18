@@ -35,11 +35,13 @@ export const Div1 = styled.div`
   flex-direction: row;
   align-content: center;
   padding: 0.5rem 0;
+  min-width: 11rem;
   @media ${(props) => props.theme.breakpoints.md} {
-    grid-area: 1 / 1 / 2 / 2;
+    grid-area: 1 / 1 / 2 / 3;
+    max-width: 12rem;
   }
   @media screen and (max-width: 480px) {
-    grid-area: 1 / 1 / 2 / 3;
+    grid-area: 1 / 1 / 2 / 4;
   }
   
 `;
@@ -138,7 +140,7 @@ export const NavLink = styled.a`
 `;
 
 export const Logo = styled.img`
-  width: 60%;
+  width: 100%;
 `;
 
 /// DropDown Contact

@@ -1,6 +1,7 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet()
@@ -28,11 +29,19 @@ export default class MyDocument extends Document {
     }
   }
   render() {
+    
     return (
-      <Html lang='en-GB'>
+      <Html>
         <Head>
-          <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-        </Head>
+        
+        <link rel="alternate" href="https://motonurk.ee/en" hrefLang="en" />
+        <link rel="alternate" href="https://motonurk.ee/et" hrefLang="et" />
+        <link rel="alternate" href="https://motonurk.ee" hrefLang="ru" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Roboto:ital,wght@0,100;1,100&display=swap" rel="stylesheet" />
+
+</Head>
         <body>
           <Main />
           <NextScript />

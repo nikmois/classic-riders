@@ -7,16 +7,23 @@ export const Header = styled.h2`
 `;
 
 export const Container = styled.div`
-  max-width: 1200px;
-margin: 5vh auto 10vh auto;
-font-size: 100%;
-display: flex;
-gap: 5rem;
-padding: 6rem 1rem 0 1rem;
-@media screen and (max-width: 750px){
-flex-direction: column;
-}
+    max-width: 1200px;
+    margin: 0 auto 5vh auto;
+    font-size: 100%;
+    display: flex;
+    gap: 5rem;
+    padding: 8rem 1rem 0 1rem;
+    @media screen and (max-width: 750px){
+    flex-direction: column;
+    }
 `;
+
+export const ContactsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+`;
+
 export const Contacts = styled.div`
   display: flex;
   align-items: start;
@@ -29,7 +36,7 @@ export const Contacts = styled.div`
 export const Button = styled.button`
     width: 30%;
     text-align: center;
-    margin: 2rem 0 1rem 0;
+    margin: 2rem 0 2rem 0;
     border-radius: 5px;
     margin-top: 2rem;
     padding: 1rem;

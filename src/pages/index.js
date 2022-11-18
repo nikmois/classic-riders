@@ -1,10 +1,12 @@
-import Activities from '../components/Activities/Activities';
 import Hero from '../components/Hero/Hero';
 import Museum from '../components/Museum/Museum';
-import News from '../components/News/News';
 import Partners from '../components/Partners/Partners';
+import Footer from '../components/Footer/Footer';
 import Contact from '../components/Contact/Contact';
 import { Layout } from '../layout/Layout';
+import dynamic from "next/dynamic";
+const News = dynamic(() => import("../components/News/News"));
+const Activities = dynamic(() => import("../components/Activities/Activities"));
 
 const Home = () => {
   return (
@@ -17,6 +19,7 @@ const Home = () => {
       <Activities />
       <Partners />
       <Contact/>
+      <Footer />
     </>
   );
 };

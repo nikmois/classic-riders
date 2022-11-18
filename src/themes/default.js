@@ -1,8 +1,8 @@
 export default {
   // Temp fonts
   fonts: {
-    title: "Dela Gothic One, sans-serif",
-    main: "Dela Gothic One, sans-serif"
+    title: "Jost, sans-serif",
+    main: "Jost, sans-serif"
   },
   // Colors for layout
   colors: {

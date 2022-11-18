@@ -32,6 +32,8 @@ const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
+  
+
 `;
 
 export default GlobalStyles;

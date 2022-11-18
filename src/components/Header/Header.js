@@ -15,9 +15,10 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import Image from 'next/image'
-import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
-
 import { Container, Div1, Div2, Div3, Div4, NavLink, SocialIcons, Logo, LogoText, MobileButton, StyledListItem, StyledMenuIcon, Flags, ImageCont } from './HeaderStyles';
+import { useRouter } from 'next/router';
+import { et, ru, en } from '../../constants/translations';
+import { motion } from 'framer-motion';
 
 const Header = () =>  {
   const [scrolled, setScrolled] = useState(false);
@@ -32,6 +33,14 @@ const Header = () =>  {
     window.addEventListener('scroll', changeColor);
   } else {
   }
+
+  const changeLang = (lang) => {
+    router.push("/", `${router.asPath}`, {locale: lang})
+  }
+
+  const router = useRouter();
+  const { locale } = router;
+  let  t  = locale === "et" ? et : locale === "en" ? en : ru;
 
   const [drawer, setDrawer] = useState({
     right: false,
@@ -49,6 +58,17 @@ const Header = () =>  {
     setDrawer({ ...drawer, [anchor]: open });
   };
 
+  const animation = {
+    hidden: {
+    y: -50,
+    opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {ease:"linear" },
+    }
+  }
   
   const list = (anchor) => (
     <Box
@@ -65,10 +85,11 @@ const Header = () =>  {
               <AccountBalanceIcon sx={{ fontSize: 20 }}/>
             </ListItemIcon>
             <Link href="#museum">
-              <ListItemText primary="MUUSEUM" primaryTypographyProps={{
+              <ListItemText primary={t.museum} primaryTypographyProps={{
                   fontSize: 20,
                   fontWeight: 'medium',
                   letterSpacing: 0,
+                  fontFamily: 'Jost'
                 }}/>
             </Link>
           </ListItemButton>
@@ -83,7 +104,8 @@ const Header = () =>  {
                   fontSize: 20,
                   fontWeight: 'medium',
                   letterSpacing: 0,
-                }} primary="UUDISED" />
+                  fontFamily: 'Jost'
+                }} primary={t.news} />
             </Link>
           </ListItemButton>
         </StyledListItem>
@@ -97,7 +119,8 @@ const Header = () =>  {
                   fontSize: 20,
                   fontWeight: 'medium',
                   letterSpacing: 0,
-                }} primary="TEENUSED" />
+                  fontFamily: 'Jost'
+                }} primary={t.services} />
             </Link>
           </ListItemButton>
         </StyledListItem>
@@ -111,7 +134,8 @@ const Header = () =>  {
                   fontSize: 20,
                   fontWeight: 'medium',
                   letterSpacing: 0,
-                }} primary="KONTAKTID" />
+                  fontFamily: 'Jost'
+                }} primary={t.contacts} />
             </Link>
           </ListItemButton>
         </StyledListItem>
@@ -119,7 +143,7 @@ const Header = () =>  {
       <Divider />
       <ListItem disablePadding>
           <Flags>
-          <ImageCont>
+          <ImageCont onClick={() => changeLang('et')}>
             <Image
               src="/images/est.svg"
               alt="estonian language"
@@ -127,7 +151,7 @@ const Header = () =>  {
               height="20"
             />
           </ImageCont>
-        <ImageCont>
+        <ImageCont onClick={() => changeLang('ru')}>
             <Image
               src="/images/rus.svg"
               alt="russian language"
@@ -135,7 +159,7 @@ const Header = () =>  {
               height="20"
             />
           </ImageCont>
-        <ImageCont>
+        <ImageCont onClick={() => changeLang('en')}>
             <Image
               src="/images/eng.svg"
               alt="english language"
@@ -146,57 +170,71 @@ const Header = () =>  {
           </Flags>
           
       </ListItem>
+      <ListItem>
+        <Flags style={{marginTop: "5vh"}}>
+      <SocialIcons href="https://www.facebook.com/profile.php?id=100087108581611">
+        <AiFillFacebook color="#9a9a9a" size="3rem"/>
+      </SocialIcons>
+      <SocialIcons href="https://instagram.com/motonurk?igshid=YmMyMTA2M2Y=">
+        <AiFillInstagram color="#9a9a9a" size="3rem"/>
+      </SocialIcons>
+      </Flags>
+      </ListItem>
     </Box>
   );
   
 
   return (
-  <Container style={{backgroundColor: scrolled && "#000000cf"}}>
+  <Container 
+  initial="hidden"
+  whileInView="visible"
+  viewport={{amount: 0.1, once: true}}
+  variants={animation}
+  as={motion.div} style={{backgroundColor: scrolled && "#000000cf"}}>
     <Div1>
       <Link href="#home">
-        <Logo style={{cursor: "pointer"}} src="/images/logo.svg" alt="image" />
+        <Logo style={{cursor: "pointer", width: "120%", maxWidth: "150px"}} src="/images/logo.svg" alt="image" />
       </Link>
-      <LogoText>CLASSIC <br/>RIDERS</LogoText>
     </Div1>
     <Div2>
       <li>
       <Link href="#museum">
-        <NavLink>MUUSEUM</NavLink>
+        <NavLink>{t.museum}</NavLink>
       </Link>
       </li>
       <li>
       <Link href="#news">
-        <NavLink>UUDISED</NavLink>
+        <NavLink>{t.news}</NavLink>
       </Link>
       </li>
       <li>
       <Link href="#services">
-        <NavLink>TEENUSED</NavLink>
+        <NavLink>{t.services}</NavLink>
       </Link>
       </li>
       <li>
       <Link href="#contacts">
-        <NavLink>KONTAKTID</NavLink>
+        <NavLink>{t.contacts}</NavLink>
       </Link>
       </li>
     </Div2>
     <Div3>
-      <SocialIcons href="/">
+      <SocialIcons href="https://www.facebook.com/profile.php?id=100087108581611">
         <AiFillFacebook size="3rem"/>
       </SocialIcons>
-      <SocialIcons href="/">
+      <SocialIcons href="https://instagram.com/motonurk?igshid=YmMyMTA2M2Y=">
         <AiFillInstagram size="3rem"/>
       </SocialIcons>
     </Div3>
     <Div4>
     <ImageCont>
-    <Image src="/images/est.svg" alt="estonian language" width="25" height="20"/>
+    <Image src="/images/est.svg" alt="estonian language" width="25" height="20" onClick={() => changeLang('et')}/>
     </ImageCont>
     <ImageCont>
-    <Image src="/images/rus.svg" alt="russian language" width="25" height="20"/>
+    <Image src="/images/rus.svg" alt="russian language" width="25" height="20" onClick={() => changeLang('ru')}/>
     </ImageCont>
     <ImageCont>
-    <Image src="/images/eng.svg" alt="english language" width="25" height="20"/>
+    <Image src="/images/eng.svg" alt="english language" width="25" height="20" onClick={() => changeLang('en')}/>
     </ImageCont>
     </Div4>
     <MobileButton>

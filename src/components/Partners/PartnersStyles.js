@@ -14,6 +14,7 @@ export const Container = styled.div`
 export const Header = styled.h2`
   font-size: clamp(2.5rem, 3vw, 3.5rem);
   margin: 7rem 0 3rem 0;
+  font-weight: 700;
 `;
 
 export const Carousel = styled.div`
@@ -30,7 +31,7 @@ export const Partner = styled.div`
   transition: .4s ease;
   align-self: center;
   &:hover{
-    font-size: 1.9rem;
+    transform: scale(1.1);
   }
 `;
 

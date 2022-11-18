@@ -9,42 +9,45 @@ import {
   TextContainer,
 } from "./MuseumStyles";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { et, en, ru } from "../../constants/translations";
+import { motion } from "framer-motion";
 
-const Museum = () => (
+const Museum = () => {
+  const animation = {
+    hidden: {
+    y: 100,
+    opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {duration: 0.4}
+    }
+  }
+  const router = useRouter();
+  const { locale } = router;
+  let  t  = locale === "et" ? et : locale === "en" ? en : ru;
+  return(
   <Container id="museum">
-    <Header>MUUSEUM</Header>
+    <Header 
+    initial="hidden"
+    whileInView="visible"
+    viewport={{amount: 1, once: true}}
+    variants={animation}
+    as={motion.div}>
+      {t.museum}</Header>
     <TextContainer>
-      С 2021 года в Нарва на бастионе Глория в здании бывшей котельной района
-      создаётся мотомузей. Здесь будет находиться мототехника произведённая как
-      в советском союзе, так и в других странах. Ожидается, что в выставочный
-      зал музея первые посетители попадут в 2023 году.
+      {t.museum1}
       <SmallCont>
-        <PaymentContainer>
-          Для создания музея нам нужна Ваша помощь. Мы будем благодарны всем,
-          кто поможет создать мотомузей.
-          <br />
-          Реквизиты переводов:
-          <br />
-          Получатель: MTÜ Classic Riders AMC
-          <br />
-          Счёт получателя: EE562200221061274816
-          <br />
-          Пояснение: Muuseumi toetus
-          <br />
-          Также можно передать деньги или оказать иную помощь в создание музея
-          по адресу Vestervalli 17a, Narva.
+        <PaymentContainer dangerouslySetInnerHTML={{ __html: t.museum2 }}>
         </PaymentContainer>
         <ImageCont>
           <Image src="/images/Moto.jpg" alt="Motonurk" layout="fill" objectFit="cover"/>
         </ImageCont>
       </SmallCont>
-      <br />
-      <br />
-      <p style={{ fontSize: "2rem" }}>
-        Спасибо всем, кто поддерживает создание музея!
-      </p>
     </TextContainer>
   </Container>
-);
+)};
 
 export default Museum;

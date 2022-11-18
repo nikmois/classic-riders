@@ -1,0 +1,11 @@
+
+
+{ 
+    "locales": ["en", "et", "ru"], 
+    "defaultLocale": "ru", 
+    "pages":{
+        "*":["common"],
+        "#news":["common"],
+        "#museum":["common"]
+    }
+}

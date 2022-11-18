@@ -2,10 +2,25 @@ import styled from 'styled-components'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CloseIcon from '@mui/icons-material/Close';
+import Box from "@mui/material/Box";
+import { motion } from 'framer-motion';
+
+
+export const StyledBox = styled(Box)`
+  padding: 4rem 9rem;
+  @media ${(props) => props.theme.breakpoints.md} {
+    padding: 3rem;
+  }
+  @media ${(props) => props.theme.breakpoints.sm} {
+    padding: 1.5rem;
+  }
+`;
 
 export const Header = styled.h2`
   font-size: clamp(2.5rem, 3vw, 3.5rem);
   margin: 7rem 0 3rem 0;
+  font-weight: 700;
+  text-align: center;
 `;
 
 export const StyledIcon = styled(CloseIcon)`
@@ -20,11 +35,7 @@ export const StyledIcon = styled(CloseIcon)`
 `;
 
 export const Container = styled.div`
-  display: flex;
-  align-items: center;
   overflow: hidden;
-  justify-content: start;
-  flex-direction: column;
   background-color: #e8e8e8;
   padding: 2rem;
   transition: 0.4s ease;
@@ -51,13 +62,15 @@ export const ButtonCont = styled.div`
 
 export const StyledCard = styled(Card)`
   width: 90vw;
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem auto;
   display: flex;
   height: 100%;
   overflow: initial;
   max-width: 900px;
-  cursor: pointer;
   transition: all 0.3s ease;
+  cursor: pointer;
+  
+
   &:hover{
     transform: scale(1.03);
   }
@@ -68,6 +81,8 @@ export const StyledCard = styled(Card)`
   }
   }
 `;
+
+export const MStyledCard = motion(StyledCard)
 
 export const Button = styled.button`
   border-radius: 5px;
@@ -114,5 +129,65 @@ export const CardImage = styled.div`
     align-items: center;
     justify-content: center;
     margin: 2rem auto;
+  }
+`;
+
+export const ModalInfo = styled.div`
+  width: 100%;
+`;
+
+export const ModalText = styled.div`
+float:none;
+overflow: visible;
+font-size: 1.5rem;
+text-align: justify;
+line-height: 2;
+`;
+
+export const ModalImage = styled.div`
+  float: right;
+  margin: 0 0 4rem 6rem;
+  border-radius: 6px;
+  width: 40%;
+  max-width: 400px;
+  cursor: pointer;
+
+  div, span {
+    position: unset !important;
+    
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    width: 60%;
+  }
+  @media ${(props) => props.theme.breakpoints.sm} {
+    width: 100%;
+  }
+  
+`;
+
+export const Video = styled.iframe`
+  border: none;
+  width: 100%;
+  height: 100%;
+`;
+
+export const VideoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 360px;
+  max-width: 700px;
+  margin: 2rem auto;
+  @media ${(props) => props.theme.breakpoints.sm} {
+    height: 200px;
   }
 `;
