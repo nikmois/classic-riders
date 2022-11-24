@@ -43,7 +43,7 @@ const Museum = () => {
         <PaymentContainer dangerouslySetInnerHTML={{ __html: t.museum2 }}>
         </PaymentContainer>
         <ImageCont>
-          <Image src="/images/Moto.jpg" alt="Motonurk" layout="fill" objectFit="cover"/>
+          <Image src="/images/Moto.jpg" alt="Motonurk" layout="fill" objectFit="cover" priority/>
         </ImageCont>
       </SmallCont>
     </TextContainer>

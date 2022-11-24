@@ -2,6 +2,7 @@ import Theme from '../styles/theme';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import "yet-another-react-lightbox/styles.css";
+
 import Head from 'next/head';
 import { et, en, ru } from "../constants/translations";
 import { useRouter } from "next/router";

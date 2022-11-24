@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import { Services } from '../../constants/constants';
 import { et, en, ru } from '../../constants/translations';
 import PhotoAlbum from "react-photo-album";
+import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import Image from "next/image";
 import Modal from "@mui/material/Modal";
 import dynamic from 'next/dynamic'
@@ -15,9 +16,10 @@ import { useRouter } from 'next/router';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { motion } from 'framer-motion';
 
+
 const Lightbox = dynamic(() => import("yet-another-react-lightbox"), {
   ssr: false,
-})
+});
 
 const style = {
   position: "absolute",
@@ -104,7 +106,7 @@ const Activities = () => {
           <CardMedia
           >
           <div style={{ position: 'relative', width: '100%', height: '200px' }}>
-            <Image src={service.image} layout="fill" objectFit="cover" alt={service.imagealt}/>
+            <Image src={service.image} layout="fill" objectFit="cover" alt={service.imagealt} priority/>
           </div>
           </CardMedia>
           <CardContent sx={{ height: 100, fontWeight: "regular", fontFamily: 'Jost' }}>
@@ -125,13 +127,16 @@ const Activities = () => {
           BackdropProps={{ style: { backgroundColor: "#00000048" } }}
         >
           <StyledBox sx={style}>
+          <CancelPresentationIcon style={{fontSize: "3rem",color: "white", margin: "6px 10px 5px 10px",float: "right", cursor: "pointer"}} onClick={handleClose}/>
             <Typography
               id="modal-modal-title"
               variant="h6"
               component="h2"
               style={{ fontSize: "2.3rem", marginBottom: "2rem", width: "100%", backgroundColor: "#a9a9a9", padding: "1rem", borderRadius: "5px", color: "white" }}
               dangerouslySetInnerHTML={{ __html: locale === "ru" ? Services[modal]?.titleru : locale === "en" ? Services[modal]?.titleen : Services[modal]?.titleet }}
-            ></Typography>
+            >
+              
+            </Typography>
             <ModalInfo>
             {Services[modal]?.video && 
             <VideoContainer>
@@ -294,6 +299,7 @@ const Activities = () => {
               open={open2}
               close={() => setOpen2(false)}
               slides={Services[modal]?.forsale[productIndex].images}
+              
               render={{
                 slide: (image, offset, rect) => {
                   const width = Math.round(

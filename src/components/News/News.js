@@ -19,6 +19,7 @@ import { NewsCards } from "../../constants/constants";
 import { motion } from "framer-motion";
 import PhotoAlbum from "react-photo-album";
 import Typography from "@mui/material/Typography";
+import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import Image from "next/image";
 import Modal from "@mui/material/Modal";
 import { et, en, ru } from "../../constants/translations";
@@ -119,6 +120,7 @@ const News = () => {
                 alt={card.imagealt}
                 layout="fill"
                 objectFit="cover"
+                priority
               />
             </CardImage>
           </MStyledCard>
@@ -145,6 +147,7 @@ const News = () => {
                 alt={card.imagealt}
                 layout="fill"
                 objectFit="cover"
+                priority
               />
             </CardImage>
           </MStyledCard>)
@@ -159,6 +162,7 @@ const News = () => {
           BackdropProps={{ style: { backgroundColor: "#00000048" } }}
         >
           <StyledBox sx={style}>
+          <CancelPresentationIcon style={{fontSize: "3rem",color: "white", margin: "6px 10px 5px 10px",float: "right", cursor: "pointer"}} onClick={handleClose}/>
             <Typography
               id="modal-modal-title"
               variant="h6"
