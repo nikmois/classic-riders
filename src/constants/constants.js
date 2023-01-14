@@ -1,5 +1,74 @@
- 
- 
+export const Gallery = [
+  {
+    src: '/images/gallery/Moto.jpg',
+    width: 6648,
+    height: 5472,
+    titleru: "хуй",
+    titleee: "hui",
+    titleen: "huy",
+    alt: "some" 
+  },
+  {
+    src: '/images/gallery/Mobile.jpg',
+    width: 5472,
+    height: 3648,
+    titleru: "хуй",
+    titleee: "hui",
+    titleen: "huy",
+    alt: "some" 
+  },
+  {
+    src: '/images/soit3.webp',
+    width: 1936,
+    height: 1215,
+    titleru: "хуй",
+    titleee: "hui",
+    titleen: "huy",
+    alt: "Narvamoto" 
+  },
+  {
+  src: '/images/soit4.jpg',
+  width: 1388,
+  height: 925,
+  titleru: "хуй",
+  titleee: "hui",
+  titleen: "huy",
+  alt: "Narva moto" 
+  },
+  {
+    src: '/images/gallery/Moto.jpg',
+    width: 6648,
+    height: 5472,
+    titleru: "хуй",
+    titleee: "hui",
+    titleen: "huy",
+    alt: "some" 
+  },
+  {
+    src: '/images/gallery/Mobile.jpg',
+    width: 5472,
+    height: 3648,
+    alt: "some" 
+  },
+  {
+    src: '/images/soit3.webp',
+    width: 1936,
+    height: 1215,
+    titleru: "хуй",
+    titleee: "hui",
+    titleen: "huy",
+    alt: "Narvamoto" 
+  },
+  {
+  src: '/images/soit4.jpg',
+  width: 1388,
+  height: 925,
+  titleru: "хуй",
+  titleee: "hui",
+  titleen: "huy",
+  alt: "Narva moto" 
+  },
+]
 export const NewsCards = [
   {
     id: "n1",
