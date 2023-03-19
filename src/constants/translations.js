@@ -20,6 +20,7 @@ export const en = {
     surname: "Family Name",
     email: "E-mail",
     mess: "Your message",
+    aruanne: "Annual report"
 }
 
 export const et = {
@@ -44,6 +45,7 @@ export const et = {
     surname: "Perekonnanimi",
     email: "E-mail",
     mess: "Teie sõnum",
+    aruanne: "Aastaaruanne"
 }
 
 export const ru = {
@@ -68,4 +70,5 @@ export const ru = {
     surname: "Фамилия",
     email: "E-mail",
     mess: "Ваше сообщение",
+    aruanne: "Годовой отчет"
 }

@@ -40,15 +40,27 @@ export const FooterContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	background-color: #454545;
+	flex-direction: column;
 	min-height: 15vh;
 	width: 100vw;
 	padding: 3vh 0;
+`;
+
+export const Report = styled.div`
+	font-size: 14px;
+	color: #cecece;
 `;
 
 export const Logo = styled.img`
   width: 100%;
   
 `;
+
+export const Year = styled.a`
+	color: white;
+	font-weight: 600;
+	font-size: 13;
+`;	
 
 export const Wrapper = styled.div`
 	display: flex;

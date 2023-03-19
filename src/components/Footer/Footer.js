@@ -1,8 +1,9 @@
 import React from 'react';
-import {Container, FooterContainer, Header, Wrapper, Left, Right, Logo, Text, SocLink, Hr, BottomContainer, LogoContainer} from './FooterStyles';
+import {Container, FooterContainer, Header, Report, Year, Wrapper, Left, Right, Logo, Text, SocLink, Hr, BottomContainer, LogoContainer} from './FooterStyles';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ru, et, en } from '../../constants/translations';
+import { Years } from '../../constants/constants';
 
 const Footer = () => {
   const router = useRouter();
@@ -24,6 +25,11 @@ const Footer = () => {
       MotoNurk - {t.footer}
       </Right>
       </Wrapper>
+      <Report>
+      {t.aruanne}: {Years.map((year)=>
+      <Year href={year.pdf} download={year.pdf}>{year.year} </Year>
+      )}
+      </Report>
       </FooterContainer>
       <BottomContainer>
       <Hr/>

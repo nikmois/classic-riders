@@ -69,6 +69,14 @@ export const Gallery = [
   alt: "Narva moto" 
   },
 ]
+
+export const Years = [
+  {
+    year: 2022,
+    pdf: "2022.pdf",
+  },
+]
+
 export const NewsCards = [
   {
     id: "n1",
